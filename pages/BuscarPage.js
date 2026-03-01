@@ -1,33 +1,23 @@
-// pages/BuscarPage.js
-// Page Object da funcionalidade: Buscar Cursos
-// Padrão: POM (Page Object Model)
-//
-// REGRA DO POM:
-//   ✅ Aqui ficam: seletores, ações, getters de locator
-//   ❌ Aqui NÃO fica: lógica de teste, expect(), dados de teste
-
 class BuscarPage {
   constructor(page) {
     // Guarda a referência da página do navegador
     this.page = page;
 
-    // ─── Elementos da Página Inicial ────────────────────────────────────────
+    // Elementos da Página Inicial
     this.menuPaginaInicial       = page.getByRole('menuitem', { name: 'Página inicial' });
     this.linkVerTodosCursos      = page.getByRole('link', { name: 'Ver todos os cursos' });
     this.quantidadeCursos        = page.locator('.course-number.h-bold-5.m-0');
 
-    // ─── Elementos da Busca ─────────────────────────────────────────────────
+    // Elementos da Busca
     this.campoBusca  = page.getByRole('textbox', { name: 'Buscar cursos' });
     this.botaoBuscar = page.getByRole('button', { name: '^ Buscar cursos' });
 
-    // ─── Elementos de Resultado ─────────────────────────────────────────────
+    // Elementos de Resultado
     this.cardsDeCurso         = page.locator('.card.dashboard-card');
     this.mensagemSemResultado = page.getByText(/nenhum curso encontrado/i);
   }
-
-  // ════════════════════════════════════════════════════════════════════════════
+  
   // AÇÕES DE NAVEGAÇÃO
-  // ════════════════════════════════════════════════════════════════════════════
 
   // Clica no item "Página inicial" do menu
   async irParaPaginaInicial() {
@@ -45,9 +35,7 @@ class BuscarPage {
     await this.clicarVerTodosCursos();
   }
 
-  // ════════════════════════════════════════════════════════════════════════════
   // AÇÕES DE BUSCA
-  // ════════════════════════════════════════════════════════════════════════════
 
   // Digita um termo no campo de busca
   async digitarTermoBusca(termo) {

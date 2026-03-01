@@ -1,6 +1,3 @@
-// tests/login.spec.js
-// Casos de teste da funcionalidade de Login — Iterasys
-
 const { test, expect } = require('@playwright/test');
 const { LoginPage }    = require('../pages/LoginPage');
 const { usuarios }     = require('../fixtures/dados');
@@ -10,9 +7,7 @@ const MENSAGEM_ERRO_CREDENCIAIS = 'Nome de usuário ou senha errados. Por favor 
 
 test.describe('Login — Casos de Teste', () => {
 
-  // ----------------------------------------------------------
   // CT001 — Login com sucesso
-  // ----------------------------------------------------------
   test('CT001 — deve fazer login com credenciais válidas', async ({ page }) => {
     // DADO que o usuário está na página de login
     const loginPage = new LoginPage(page);
@@ -33,9 +28,7 @@ test.describe('Login — Casos de Teste', () => {
     expect(titulo).toBe(usuarios.valido.tituloSecao);
   });
 
-  // ----------------------------------------------------------
   // CT002 — Senha incorreta
-  // ----------------------------------------------------------
   test('CT002 — deve exibir erro com senha incorreta', async ({ page }) => {
     // DADO que o usuário está na página de login
     const loginPage = new LoginPage(page);
@@ -55,9 +48,7 @@ test.describe('Login — Casos de Teste', () => {
     expect(textoErro).toBe(MENSAGEM_ERRO_CREDENCIAIS);
   });
 
-  // ----------------------------------------------------------
   // CT003 — Campos em branco
-  // ----------------------------------------------------------
   test('CT003 — deve exibir erro com campos em branco', async ({ page }) => {
     // DADO que o usuário está na página de login
     const loginPage = new LoginPage(page);

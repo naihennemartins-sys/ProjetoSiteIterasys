@@ -1,7 +1,3 @@
-// pages/LoginPage.js
-// Page Object da página de Login — Iterasys
-// Seletores extraídos com o Playwright Codegen
-
 const { expect } = require('@playwright/test');
 
 class LoginPage {
@@ -10,18 +6,15 @@ class LoginPage {
     // Guarda a referência da página do navegador
     this.page = page;
 
-    // --- Elementos do formulário de login ---
+    // Elementos do formulário de login ---
     this.campoIdentificacao = page.getByRole('textbox', { name: 'Identificação de usuário' });
     this.campoSenha         = page.getByRole('textbox', { name: 'Senha' });
     this.botaoAcessar       = page.getByRole('button',  { name: 'Acessar', exact: true });
 
-    // Mensagem de erro — usa getByRole('alert') para pegar o div visível
-    // O site tem dois elementos com o mesmo texto, mas só o alert é visível
+    // Mensagem de erro — O site tem dois elementos com o mesmo texto, mas só o alert é visível
     this.mensagemErro       = page.getByRole('alert');
 
     // Título da seção exibido após o login bem-sucedido
-    // Usa expressão regular /Olá,/ para funcionar com qualquer nome de usuário
-    // Assim o teste não quebra se outra pessoa rodar com uma conta diferente
     this.tituloSecao        = page.getByRole('heading', { name: /Olá,/ });
   }
 

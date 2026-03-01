@@ -1,25 +1,20 @@
-// fixtures/dados.js
-// Centraliza os dados usados nos testes da Iterasys
-// ⚠️  Substitua pelos dados reais da sua conta de teste
-//     Dica: crie uma conta só para testes, nunca use a pessoal!
-
 const usuarios = {
 
-  // ✅ Usuário com credenciais válidas
+  //Usuário com credenciais válidas
   valido: {
-    identificacao: '',
-    senha:         '',
+    identificacao: 'naihenne45@gmail.com',
+    senha:         'G@tolino25',
     urlPosLogin:   'https://iterasys.com/my/',
-    tituloSecao:   '',
+    tituloSecao:   'Olá, Naihenne! 👋',
   },
 
-  // ❌ Mesmo usuário, senha errada — testa mensagem de erro
+  //Mesmo usuário, senha errada — testa mensagem de erro
   senhaErrada: {
     identificacao: 'teste01@gmail.com',
     senha:         'senhaErrada999',
   },
 
-  // ❌ Campos em branco — testa validação de campos obrigatórios
+  //Campos em branco — testa validação de campos obrigatórios
   semDados: {
     identificacao: '',
     senha:         '',

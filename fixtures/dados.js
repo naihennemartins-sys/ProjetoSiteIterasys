@@ -2,15 +2,15 @@ const usuarios = {
 
   //Usuário com credenciais válidas
   valido: {
-    identificacao: 'naihenne45@gmail.com',
-    senha:         'G@tolino25',
+    identificacao: 'usuario@email.com',
+    senha:         'SenhaValida123',
     urlPosLogin:   'https://iterasys.com/my/',
-    tituloSecao:   'Olá, Naihenne! 👋',
+    tituloSecao:   'Olá, Usuário! 👋',
   },
 
   //Mesmo usuário, senha errada — testa mensagem de erro
   senhaErrada: {
-    identificacao: 'teste01@gmail.com',
+    identificacao: 'usuario@email.com',
     senha:         'senhaErrada999',
   },
 

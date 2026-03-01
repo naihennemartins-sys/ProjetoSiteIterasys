@@ -28,7 +28,7 @@ test.describe('Exibir Cursos — Navegação', () => {
 
     // ENTÃO o título deve ser visível e a URL deve conter o trecho esperado
     await expect(buscarPage.quantidadeCursos).toBeVisible();
-    await expect(page).toHaveURL(/course\/index\.php/); // ⚠️ ajuste conforme a URL real
+    await expect(page).toHaveURL(/course\/index\.php/); 
   });
 
 });
